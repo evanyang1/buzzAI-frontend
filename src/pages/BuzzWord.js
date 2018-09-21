@@ -90,12 +90,8 @@ class BuzzWord extends Component {
 	handleSearch = () => {
 		let self = this;
 		// axios.post('http://localhost:3000/popularity', {
-		axios.post('http://buzzai-env-2.us-east-2.elasticbeanstalk.com/popularity', {
-			keyword: self.state.keyword,
-			startTime: self.state.startTime,
-			endTime: self.state.endTime,
-			resolution: self.state.geo === '' ? self.state.resolution : self.state.geo, // if there is geo, don't pass in resolution
-			geo: self.state.geo,
+		axios.post('http://buzzai-env-2.us-east-2.elasticbeanstalk.com/buzz10', {
+			placeName: self.state.address
 		})
 		.then(function (response) {
 			// console.log("the response is:", response.data.default);
